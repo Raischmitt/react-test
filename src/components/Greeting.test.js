@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event;'
+import userEvent from '@testing-library/user-event';
 import Greeting from "./Greeting";
 
 describe('<Greeting />', () => {
     test('renders hello world as a text', () => {
         render(<Greeting />);
 
-        const helloWorldElement = screen.getByText('hello world!');
+        const helloWorldElement = screen.getByText('Hello world');
         expect(helloWorldElement).toBeInTheDocument();
     });
 
@@ -23,7 +23,7 @@ describe('<Greeting />', () => {
         const buttonElement = screen.getByRole('button');
         userEvent.click(buttonElement);
 
-        const outputElement = screen.getByText(' changed');
+        const outputElement = screen.getByText('changed!');
         expect(outputElement).toBeInTheDocument();
     })
 
